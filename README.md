@@ -57,6 +57,11 @@ npm run dev
 
 
 ```
+
+5. Create a .env file in the root folder
+-EMAIL_USER=
+-EMAIL_APP_PASSWORD=
+-EMAIL_SENDER_NAME=
 ## Will be available on PORT 3000
 
 ## Usage
