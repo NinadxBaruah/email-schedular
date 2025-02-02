@@ -44,9 +44,9 @@ export class EmailScheduler {
   }
 
   static async sendEmail(mailing) {
-    const baseUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : 'http://localhost:3000';
+    const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
+      ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+      : 'http://localhost:3000';
     try {
       const response = await fetch(`${baseUrl}/api/send-email`, {
         method: "POST",
@@ -55,11 +55,11 @@ export class EmailScheduler {
         },
         body: JSON.stringify(mailing),
       });
-
+  
       if (!response.ok) {
         throw new Error("Failed to send emails");
       }
-
+  
       const result = await response.json();
       console.log(result);
     } catch (error) {
