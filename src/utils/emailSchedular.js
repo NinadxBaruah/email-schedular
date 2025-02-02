@@ -48,7 +48,7 @@ export class EmailScheduler {
       ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
       : 'http://localhost:3000';
     try {
-      const response = await fetch(`${baseUrl}/api/send-email`, {
+      const response = await fetch(`/api/send-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
