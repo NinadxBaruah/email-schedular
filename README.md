@@ -29,7 +29,7 @@ Before you begin, ensure you have installed:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/email-scheduler.git
+git clone https://github.com/NinadxBaruah/email-schedular.git
 cd email-scheduler
 ```
 
@@ -51,7 +51,10 @@ npx shadcn@latest add alert
 4. To run
 
 ```bash
+npm install
+and
 npm run dev
+
 
 ```
 ## Will be available on PORT 3000
@@ -72,7 +75,7 @@ export const mockMailers = [
   },
   // Add more templates...
 ];
-```
+
 
 ### Setting Up Recipient Lists
 
