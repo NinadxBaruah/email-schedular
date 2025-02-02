@@ -44,8 +44,11 @@ export class EmailScheduler {
   }
 
   static async sendEmail(mailing) {
+    const baseUrl = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : 'http://localhost:3000';
     try {
-      const response = await fetch("/api/send-email", {
+      const response = await fetch(`${baseUrl}/api/send-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
