@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Email Campaign Scheduler
 
-## Getting Started
+A React-based email campaign scheduling system that allows users to schedule, manage, and track email campaigns using customizable templates and recipient lists.
 
-First, run the development server:
+## Features
+
+- 📅 Schedule email campaigns for future dates and times
+- 📧 Manage email templates and recipient lists
+- 👥 Preview campaigns before scheduling
+- 🔔 Real-time notifications for scheduling and sending events
+- 📊 Track scheduled campaigns
+- ⚡ Cancel or modify scheduled campaigns
+
+## Tech Stack
+
+- React 18+
+- Next.js 14
+- Shadcn/UI Components
+- Tailwind CSS
+- Lucide Icons
+
+## Prerequisites
+
+Before you begin, ensure you have installed:
+- Node.js 18.0 or higher
+- npm or yarn or pnpm
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/your-username/email-scheduler.git
+cd email-scheduler
+```
+
+2. Install dependencies:
+```bash
+npm install
+
+```
+
+3. Install required shadcn/ui components:
+```bash
+npx shadcn@latest add toast
+npx shadcn@latest add card
+npx shadcn@latest add button
+npx shadcn@latest add label
+npx shadcn@latest add alert
+```
+
+4. To run
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+```
+## Will be available on PORT 3000
+
+## Usage
+
+### Setting Up Email Templates
+
+Create your email templates in the `mockData.js` file:
+
+```javascript
+export const mockMailers = [
+  {
+    id: 1,
+    name: "Welcome Email",
+    subject: "Welcome to Our Service",
+    content: "Hello {name}, welcome to..."
+  },
+  // Add more templates...
+];
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Setting Up Recipient Lists
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Define your recipient lists in the same `mockData.js` file:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```javascript
+export const mockLists = [
+  {
+    id: 1,
+    name: "New Subscribers",
+    emails: ["user1@example.com", "user2@example.com"]
+  },
+  // Add more lists...
+];
+```
 
-## Learn More
+### Scheduling an Email Campaign
 
-To learn more about Next.js, take a look at the following resources:
+1. Select an email template from the dropdown
+2. Choose a recipient list
+3. Set the date and time for the campaign
+4. Review the preview
+5. Click "Schedule Mailing"
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Managing Scheduled Campaigns
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- View all scheduled campaigns in the list below the scheduler
+- Cancel any scheduled campaign by clicking the delete button
+- Monitor sending status through toast notifications
 
-## Deploy on Vercel
+## Component Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
